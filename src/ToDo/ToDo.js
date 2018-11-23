@@ -31,12 +31,15 @@ class ToDo extends React.Component {
 
     completeTask = taskKey => this.setState({
         tasks: this.state.tasks.map(
-            task=> {
-                if (taskKey === taskKey ){
-                    task.isComplited = true 
-                 }
-                 return task
-            }
+            task => (
+                (task.key === taskKey) ?
+                    {
+                        ...task,
+                        isComplited: true
+                    }
+                    :
+                    task
+            )
         )
     })
 
