@@ -75,17 +75,19 @@ class ToDo extends React.Component {
                     onNewTaskTextChangeHandler={this.onNewTaskTextChangeHandler}
                     addTask={this.addTask}
                 />
-                <List
-                    taskList={this.state.tasks}
-                    completeTask={this.completeTask}
-                    deleteTask={this.deleteTask}
-                />
                 <Search
                     filterText={this.state.filterText}
                     onFilterTextChangeHandler={this.onFilterTextChangeHandler}
                     onAllClickHandler={this.onAllClickHandler}
                     onCompletedClickHandler={this.onCompletedClickHandler}
                     onUnCompletedClickHandler={this.onUnCompletedClickHandler}
+                />
+                <List
+                    filterText={this.state.filterText}
+                    chosenFilter={this.state.chosenFilter}
+                    taskList={this.state.tasks}
+                    completeTask={this.completeTask}
+                    deleteTask={this.deleteTask}
                 />
             </div>
         )
