@@ -1,11 +1,13 @@
-import React from 'react';
+import React from 'react'
+import ToDo from './ToDo'
+
 
 
 const App = (props) => (
   <div>
-    siema
+    <ToDo />
   </div>
   )
 
 
-export default App;
+export default App
