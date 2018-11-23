@@ -43,6 +43,14 @@ class ToDo extends React.Component {
         )
     })
 
+    onAllClickHandler = () => this.setState({ chosenFilter: 'All' })
+    onCompletedClickHandler = () => this.setState({ chosenFilter: 'All' })
+    onUnCompletedClickHandler = () => this.setState({ chosenFilter: 'All' })
+
+    onFilterTextChangeHandler = event => ({ filterText: event.target.value })
+    onNewTaskTextChangeHandler = event => ({ newTaskText: event.target.value })
+
+
     render() {
         return (
             <div>
