@@ -26,6 +26,7 @@ const Task = (props) => (
             onClick={() => props.deleteTask(props.task.key)}
             label="delete"
             style={style.button}
+            primary={true}
 
         />
     </div>

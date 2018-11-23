@@ -1,5 +1,7 @@
 import React from 'react'
 import RaisedButton from 'material-ui/RaisedButton'
+import TextField from 'material-ui/TextField';
+
 
 
 
@@ -10,11 +12,12 @@ const style = {
 }
 const Search = (props) => (
     <div>
-        <input
+        <TextField
             type="text"
             value={props.filterText}
             onChange={props.onFilterTextChangeHandler}
-            placeholder="filter task"
+            floatingLabelText="filter task"
+            fullWidth={true}
         />
         <div>
             <RaisedButton
@@ -22,12 +25,20 @@ const Search = (props) => (
                 onClick={props.onAllClickHandler}
                 label='All'
                 style={style.button}
+                fullWidth={true}
+                primary={true}
+
+
             />
             <RaisedButton
                 disabled={props.chosenFilter === 'Completed'}
                 onClick={props.onCompletedClickHandler}
                 label="Completed"
                 style={style.button}
+                fullWidth={true}
+                primary={true}
+
+
 
             />
             <RaisedButton
@@ -35,6 +46,10 @@ const Search = (props) => (
                 onClick={props.onUnCompletedClickHandler}
                 label="UnCompleted"
                 style={style.button}
+                fullWidth={true}
+                primary={true}
+
+
 
             />
         </div>
