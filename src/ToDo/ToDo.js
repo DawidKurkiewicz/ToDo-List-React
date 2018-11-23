@@ -23,11 +23,22 @@ class ToDo extends React.Component {
         )
     })
 
-deleteTask = taskKey => this.setState({
-    tasks: this.state.tasks.filter(
-        task => task.key !== taskKey
-    )
-})
+    deleteTask = taskKey => this.setState({
+        tasks: this.state.tasks.filter(
+            task => task.key !== taskKey
+        )
+    })
+
+    completeTask = taskKey => this.setState({
+        tasks: this.state.tasks.map(
+            task=> {
+                if (taskKey === taskKey ){
+                    task.isComplited = true 
+                 }
+                 return task
+            }
+        )
+    })
 
     render() {
         return (
