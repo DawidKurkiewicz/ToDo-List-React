@@ -1,6 +1,7 @@
 import React from 'react'
-import RaisedButton from 'material-ui/RaisedButton'
-
+import { ListItem } from 'material-ui/List'
+import IconButton from 'material-ui/IconButton'
+import DeleteIcon from 'material-ui/svg-icons/action/delete'
 
 
 const completedStyle = {
@@ -8,28 +9,23 @@ const completedStyle = {
 }
 
 
-const style = {
-    button: {
-        margin: 12
-    }
-}
+
 
 const Task = (props) => (
-    <div>
-        <div
-            onClick={() => props.completeTask(props.task.key)}
-            style={props.task.isCompleted ? completedStyle : {}}
-        >
-            {props.task.taskText}
-        </div>
-        <RaisedButton
-            onClick={() => props.deleteTask(props.task.key)}
-            label="delete"
-            style={style.button}
-            primary={true}
+    <ListItem
+        onClick={() => props.completeTask(props.task.key)}
+        style={props.task.isCompleted ? completedStyle : {}}
+        primaryText={props.task.taskText}
+        rightIconButton={
 
-        />
-    </div>
+            <IconButton>
+                <DeleteIcon
+                    onClick={() => props.deleteTask(props.task.key)}
+                />
+            </IconButton>
+        }
+    >
+    </ListItem >
 )
 
 
