@@ -5,16 +5,16 @@ const Search = (props) => (
         <input
             type="text"
             value={props.filterText}
-            onChange={props.onFilterTextChangeHandler }
+            onChange={props.onFilterTextChangeHandler}
         />
         <div>
             <button
-                onClick={props.onAllClickHandler }
+                onClick={props.onAllClickHandler}
             >
                 All
             </button>
             <button
-                onClick={props.onCompletedClickHandler }
+                onClick={props.onCompletedClickHandler}
             >
                 Completed
             </button>
