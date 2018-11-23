@@ -12,7 +12,7 @@ class ToDo extends React.Component {
 
     createTask = text => ({
         taskText: text,
-        isComplited: false,
+        isCompleted: false,
         key: Date.now()
     })
 
@@ -38,7 +38,7 @@ class ToDo extends React.Component {
                 (task.key === taskKey) ?
                     {
                         ...task,
-                        isComplited: true
+                        isCompleted: true
                     }
                     :
                     task
@@ -58,12 +58,14 @@ class ToDo extends React.Component {
         return (
             <div>
                 <AddTask
-                newTaskText={this.state.newTaskText}
-                onNewTaskTextChangeHandler={this.onNewTaskTextChangeHandler}
-                addTask = {this.addTask}
+                    newTaskText={this.state.newTaskText}
+                    onNewTaskTextChangeHandler={this.onNewTaskTextChangeHandler}
+                    addTask={this.addTask}
                 />
                 <List
-                taskList ={this.state.tasks}
+                    taskList={this.state.tasks}
+                    completeTask={this.completeTask}
+                    deleteTask={this.deleteTask}
                 />
             </div>
         )
