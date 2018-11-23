@@ -1,5 +1,13 @@
 import React from 'react'
+import RaisedButton from 'material-ui/RaisedButton'
 
+
+
+const style = {
+    button: {
+        margin: 12
+    }
+}
 const Search = (props) => (
     <div>
         <input
@@ -9,21 +17,26 @@ const Search = (props) => (
             placeholder="filter task"
         />
         <div>
-            <button
+            <RaisedButton
+                disabled={props.chosenFilter === 'All'}
                 onClick={props.onAllClickHandler}
-            >
-                All
-            </button>
-            <button
+                label='All'
+                style={style.button}
+            />
+            <RaisedButton
+                disabled={props.chosenFilter === 'Completed'}
                 onClick={props.onCompletedClickHandler}
-            >
-                Completed
-            </button>
-            <button
+                label="Completed"
+                style={style.button}
+
+            />
+            <RaisedButton
+                disabled={props.chosenFilter === 'UnCompleted'}
                 onClick={props.onUnCompletedClickHandler}
-            >
-                Uncompleted
-            </button>
+                label="UnCompleted"
+                style={style.button}
+
+            />
         </div>
     </div>
 )

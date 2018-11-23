@@ -81,6 +81,7 @@ class ToDo extends React.Component {
                     onAllClickHandler={this.onAllClickHandler}
                     onCompletedClickHandler={this.onCompletedClickHandler}
                     onUnCompletedClickHandler={this.onUnCompletedClickHandler}
+                    chosenFilter={this.state.chosenFilter}
                 />
                 <List
                     filterText={this.state.filterText}
