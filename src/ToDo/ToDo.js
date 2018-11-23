@@ -1,6 +1,7 @@
 import React from 'react'
 import AddTask from './AddTask'
 import List from './List'
+import Search from './Search'
 
 class ToDo extends React.Component {
     state = {
@@ -47,10 +48,10 @@ class ToDo extends React.Component {
     })
 
     onAllClickHandler = () => this.setState({ chosenFilter: 'All' })
-    onCompletedClickHandler = () => this.setState({ chosenFilter: 'All' })
-    onUnCompletedClickHandler = () => this.setState({ chosenFilter: 'All' })
+    onCompletedClickHandler = () => this.setState({ chosenFilter: 'Completed' })
+    onUnCompletedClickHandler = () => this.setState({ chosenFilter: 'UnCompleted' })
 
-    onFilterTextChangeHandler = event => this.setSTate({ filterText: event.target.value })
+    onFilterTextChangeHandler = event => this.setState({ filterText: event.target.value })
     onNewTaskTextChangeHandler = event => this.setState({ newTaskText: event.target.value })
 
 
@@ -66,6 +67,13 @@ class ToDo extends React.Component {
                     taskList={this.state.tasks}
                     completeTask={this.completeTask}
                     deleteTask={this.deleteTask}
+                />
+                <Search
+                    filterText={this.state.filterText}
+                    onFilterTextChangeHandler={this.onFilterTextChangeHandler}
+                    onAllClickHandler={this.onAllClickHandler}
+                    onCompletedClickHandler={this.onCompletedClickHandler}
+                    onUnCompletedClickHandler={this.onUnCompletedClickHandler}
                 />
             </div>
         )
